@@ -1,0 +1,10 @@
+#stash api for debug (optional)
+stashAPI = ""
+#google cse id
+cseid = ""
+#google json api
+api = ""
+
+#custom search query
+def searchPhrase(query):
+    return f"({query} porn) -adultdvd"
