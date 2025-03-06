@@ -24,8 +24,8 @@ jobs:
           ref: master
           fetch-depth: "0"
       - run: |
-          cd main
-          ./build_site.sh ../_site/stable
+          cd master
+          ./build_site.sh ../_site/master
       - uses: actions/upload-pages-artifact@v3
 
   deploy:
