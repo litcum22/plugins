@@ -1,6 +1,7 @@
 name: Add Images to Tags
 description: Auto add images to tags using first found image from Google API. Requires modifying the .py file to provide your own API key and CSE ID
-version: 1.0
+version: 1.1
+url: https://github.com/litcum22/plugins
 exec:
   - python
   - "{pluginDir}/addImagesToTags.py"

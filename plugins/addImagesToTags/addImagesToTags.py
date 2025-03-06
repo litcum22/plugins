@@ -6,11 +6,13 @@ import requests
 import stashapi.log as log
 from stashapi.stashapp import StashInterface
 
-if not os.path.exists("config.py"):
-    shutil.copy("config.example", "config.py")
-    print("created example config.py")
-    exit(0)
-import config
+try:
+    import config
+except ModuleNotFoundError:
+    if not os.path.exists("config.py"):
+        shutil.copy("config.example", "config.py")
+        print("created example config.py")
+        exit(0)
 
 
 def get_image_url(search_query):
@@ -33,10 +35,11 @@ def get_image_url(search_query):
 
 
 def main():
-    global stash, mode_arg
+    global stash
+    #change per_page for how many tags to process
     t = stash.find_tags(
         filter={
-            "per_page": 1,
+            "per_page": 50,
             "page": 1,
             "sort": "scenes_count",
             "direction": "DESC"
